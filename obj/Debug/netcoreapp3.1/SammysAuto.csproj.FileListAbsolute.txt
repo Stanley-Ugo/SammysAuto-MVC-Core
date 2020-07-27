@@ -197,3 +197,4 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Accoun
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Index.cshtml.g.cs
