@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SammysAuto.Data;
 
 namespace SammysAuto.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<SammysAutoUser> _userManager;
+        private readonly SignInManager<SammysAutoUser> _signInManager;
 
         public IndexModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            UserManager<SammysAutoUser> userManager,
+            SignInManager<SammysAutoUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -35,9 +36,26 @@ namespace SammysAuto.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+            public string FirstName { get; set; }
+
+
+            public string LastName { get; set; }
+
+
+            public string Address { get; set; }
+
+
+            public string City { get; set; }
+
+
+            public string PostalCode { get; set; }
+
+            public string Password { get; set; }
+
+            public string ConfirmPassword { get; set; }
         }
 
-        private async Task LoadAsync(IdentityUser user)
+        private async Task LoadAsync(SammysAutoUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
@@ -46,7 +64,14 @@ namespace SammysAuto.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address,
+                City = user.City,
+                PostalCode = user.PostalCode,
+                Password = user.Password,
+                ConfirmPassword = user.ConfirmPassword
             };
         }
 
