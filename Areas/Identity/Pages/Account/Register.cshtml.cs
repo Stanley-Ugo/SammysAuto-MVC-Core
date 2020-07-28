@@ -129,9 +129,15 @@ namespace SammysAuto.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new SammysAutoUser
-                { 
-                    UserName = Input.Email, 
-                    Email = Input.Email
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    Address = Input.Address,
+                    City = Input.City,
+                    PostalCode = Input.PostalCode,
+                    PhoneNumber = Input.PhoneNumber
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
