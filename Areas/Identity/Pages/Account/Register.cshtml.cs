@@ -72,7 +72,7 @@ namespace SammysAuto.Areas.Identity.Pages.Account
         [Required]
         public string PhoneNumber { get; set; }
 
-        //public bool isAdmin { get; set; }
+        public bool isAdmin { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -120,6 +120,7 @@ namespace SammysAuto.Areas.Identity.Pages.Account
 
             [Required]
             public string PhoneNumber { get; set; }
+            public bool isAdmin { get; set; }
 
         }
 
@@ -158,7 +159,14 @@ namespace SammysAuto.Areas.Identity.Pages.Account
                         await _roleManager.CreateAsync(new IdentityRole(StaticDetails.AdminEndUser));
                     }
 
-                    await _userManager.AddToRoleAsync(user, StaticDetails.AdminEndUser);
+                    if (Input.isAdmin)
+                    {
+                        await _userManager.AddToRoleAsync(user, StaticDetails.AdminEndUser);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, StaticDetails.CustomerEndUser);
+                    }
 
                     _logger.LogInformation("User created a new account with password.");
 

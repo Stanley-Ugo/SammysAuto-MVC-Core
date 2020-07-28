@@ -28,6 +28,8 @@ namespace SammysAuto.Data
 
         public string ConfirmPassword { get; set; }
 
+        public bool isAdmin { get; set; }
+
     }
 
     public class SammysAutoRole : IdentityRole
