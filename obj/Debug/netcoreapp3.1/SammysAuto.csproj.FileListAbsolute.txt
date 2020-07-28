@@ -199,3 +199,5 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_Valid
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Index.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IndividualButtonPartial.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TableButtonPartial.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Create.cshtml.g.cs

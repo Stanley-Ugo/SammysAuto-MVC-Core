@@ -28,7 +28,7 @@
                     @Html.DisplayFor(m => item.Name)
                 </td>
                 <td>
-                    @Html.PartialAsync("_TableButtonPartial", new IndividualButtonPartial { ServiceId = item.Id})
+                    @Html.Partial("_TableButtonPartial", new IndividualButtonPartial { ServiceId = item.Id})
                 </td>
             </tr>
         }
