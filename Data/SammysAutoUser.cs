@@ -29,4 +29,9 @@ namespace SammysAuto.Data
         public string ConfirmPassword { get; set; }
 
     }
+
+    public class SammysAutoRole : IdentityRole
+    {
+
+    }
 }
