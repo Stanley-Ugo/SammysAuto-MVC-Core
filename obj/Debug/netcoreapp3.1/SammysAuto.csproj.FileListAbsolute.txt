@@ -201,3 +201,4 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Index.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IndividualButtonPartial.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TableButtonPartial.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Create.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Details.cshtml.g.cs
