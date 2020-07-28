@@ -202,3 +202,5 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IndividualBut
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TableButtonPartial.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Create.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Details.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Delete.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\ServiceTypes\Edit.cshtml.g.cs
