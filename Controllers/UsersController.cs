@@ -122,6 +122,17 @@ namespace SammysAuto.Controllers
             return View(user);
         }
 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var userInDb = await _db.Users.SingleOrDefaultAsync(u => u.Id == id);
+            _db.Remove(userInDb);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
