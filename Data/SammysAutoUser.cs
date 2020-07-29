@@ -28,13 +28,13 @@ namespace SammysAuto.Data
 
         public string ConfirmPassword { get; set; }
 
-        public bool isAdmin { get; set; }
+        //public bool isAdmin { get; set; }
 
     }
 
     public class SammysAutoRole : IdentityRole
     {
-        public SammysAutoRole(string roleName) : base(roleName)
+        public SammysAutoRole(string roleName)
         {
         }
     }
