@@ -8,7 +8,7 @@ using SammysAuto.Utility;
 
 namespace SammysAuto.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<SammysAutoUser, SammysAutoRole, string>
+    public class ApplicationDbContext : IdentityDbContext<SammysAutoUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -16,6 +16,5 @@ namespace SammysAuto.Data
         }
 
         public DbSet<ServiceType> ServiceTypes { get; set; }
-        public DbSet<SammysAutoRole> SammysAutoRoles { get; set; }
     }
 }
