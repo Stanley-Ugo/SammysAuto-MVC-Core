@@ -33,6 +33,7 @@ namespace SammysAuto
             services.AddIdentity<SammysAutoUser, SammysAutoRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<RoleManager<SammysAutoRole>>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

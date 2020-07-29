@@ -34,6 +34,8 @@ namespace SammysAuto.Data
 
     public class SammysAutoRole : IdentityRole
     {
-
+        public SammysAutoRole(string roleName) : base(roleName)
+        {
+        }
     }
 }

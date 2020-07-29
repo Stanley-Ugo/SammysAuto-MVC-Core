@@ -23,23 +23,23 @@ namespace SammysAuto.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<SammysAutoUser> _signInManager;
         private readonly UserManager<SammysAutoUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<SammysAutoRole> _roleManager;
         private readonly ApplicationDbContext _db;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        //private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<SammysAutoUser> userManager,
             SignInManager<SammysAutoUser> signInManager,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<SammysAutoRole> roleManager,
             ApplicationDbContext db,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            ILogger<RegisterModel> logger)
+            //IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
+            //_emailSender = emailSender;
             _roleManager = roleManager;
             _db = db;
         }
@@ -152,11 +152,11 @@ namespace SammysAuto.Areas.Identity.Pages.Account
                 {
                     if (!await _roleManager.RoleExistsAsync(StaticDetails.CustomerEndUser))
                     {
-                        await _roleManager.CreateAsync(new IdentityRole(StaticDetails.CustomerEndUser));
+                        await _roleManager.CreateAsync(new SammysAutoRole(StaticDetails.CustomerEndUser));
                     }
                     if (!await _roleManager.RoleExistsAsync(StaticDetails.AdminEndUser))
                     {
-                        await _roleManager.CreateAsync(new IdentityRole(StaticDetails.AdminEndUser));
+                        await _roleManager.CreateAsync(new SammysAutoRole(StaticDetails.AdminEndUser));
                     }
 
                     if (Input.isAdmin)
@@ -178,8 +178,8 @@ namespace SammysAuto.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                        //$"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
