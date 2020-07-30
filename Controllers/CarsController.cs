@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SammysAuto.Data;
+using SammysAuto.Models;
 using SammysAuto.View_Model;
 
 namespace SammysAuto.Controllers
@@ -34,6 +35,31 @@ namespace SammysAuto.Controllers
             return View(model);
         }
 
+        //CREATE: GET
+        public IActionResult Create(string userId)
+        {
+            Car carObj = new Car
+            {
+                Year = DateTime.Now.Year,
+                UserId = userId
+            };
+            return View(carObj);
+        }
+
+        //CREATE: POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Car car)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(car);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index), new { userId = car.UserId });
+            }
+
+            return View(car);
+        }
 
         protected override void Dispose(bool disposing)
         {
