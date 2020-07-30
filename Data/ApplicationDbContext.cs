@@ -16,5 +16,7 @@ namespace SammysAuto.Data
         }
 
         public DbSet<ServiceType> ServiceTypes { get; set; }
+        public DbSet<Car> Cars { get; set; }
+
     }
 }
