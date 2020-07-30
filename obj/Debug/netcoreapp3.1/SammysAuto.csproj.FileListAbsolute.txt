@@ -208,3 +208,4 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Index.cshtml.g.cs

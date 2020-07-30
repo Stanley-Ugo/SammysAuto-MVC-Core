@@ -1,0 +1,53 @@
+﻿@model SammysAuto.View_Model.CarAndCustomerViewModel
+@using SammysAuto.Utility
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<h2>Car Record for Customer</h2>
+<hr />
+
+<div class="row"  style="padding-bottom: 80px;">
+    <div class="col-sm-6" style="padding-bottom: 80px">
+        @* Add Create New Car button*@
+        <a asp-action="Create" asp-route-userId="@Model.UserObj.Id" class="btn btn-primary" style="width: 150px;">Add New Car </a>
+    </div>
+    <div class="col-sm-6">
+        @*Display  User Details *@
+        <div class="row">
+            <div class="col-sm-4">
+                <label asp-for="UserObj.FirstName" class="control-label"></label>
+            </div>
+            <div class="col-sm-8" style="padding-bottom: 5px;">
+                <input asp-for="UserObj.FirstName" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label asp-for="UserObj.LastName" class="control-label"></label>
+            </div>
+            <div class="col-sm-8" style="padding-bottom: 5px;">
+                <input asp-for="UserObj.LastName" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label asp-for="UserObj.PhoneNumber" class="control-label"></label>
+            </div>
+            <div class="col-sm-8" style="padding-bottom: 5px;">
+                <input asp-for="UserObj.PhoneNumber" disabled class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label asp-for="UserObj.Email" class="control-label"></label>
+            </div>
+            <div class="col-sm-8" style="padding-bottom: 5px;">
+                <input asp-for="UserObj.Email" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+
