@@ -8,7 +8,16 @@ namespace SammysAuto.View_Model
 {
     public class CarAndServicesViewModel
     {
-        public Car CarObj { get; set; }
+        public int carId { get; set; }
+       
+        public string Make { get; set; }
+        
+        public string Model { get; set; }
+        public string Style { get; set; }
+        
+        public string VIN { get; set; }
+        public int Year { get; set; }
+        
         public Service NewServiceObj { get; set; }
         public IEnumerable<Service> PastServiceObj { get; set; }
         public List<ServiceType> ServiceTypesObj { get; set; }
