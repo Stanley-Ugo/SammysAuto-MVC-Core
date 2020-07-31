@@ -12,7 +12,6 @@ using SammysAuto.View_Model;
 
 namespace SammysAuto.Controllers
 {
-    [Authorize(Roles = StaticDetails.AdminEndUser)]
     public class ServicesController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -21,6 +20,8 @@ namespace SammysAuto.Controllers
         {
             _db = db;
         }
+
+        [Authorize]
         public IActionResult Index(int carId)
         {
             var car = _db.Cars.FirstOrDefault(c => c.Id == carId);
@@ -41,6 +42,7 @@ namespace SammysAuto.Controllers
         }
 
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //GET : Services/Create
         public IActionResult Create(int carId)
         {
@@ -61,6 +63,7 @@ namespace SammysAuto.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //POST: Services/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -92,8 +95,9 @@ namespace SammysAuto.Controllers
             return View(newModel);
         }
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //DELETE: GET
-         public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -110,6 +114,7 @@ namespace SammysAuto.Controllers
             return View(services);
         }
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //DELETE: POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
