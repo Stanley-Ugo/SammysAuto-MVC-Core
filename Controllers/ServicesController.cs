@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SammysAuto.Data;
 using SammysAuto.Models;
+using SammysAuto.Utility;
 using SammysAuto.View_Model;
 
 namespace SammysAuto.Controllers
 {
+    [Authorize(Roles = StaticDetails.AdminEndUser)]
     public class ServicesController : Controller
     {
         private readonly ApplicationDbContext _db;

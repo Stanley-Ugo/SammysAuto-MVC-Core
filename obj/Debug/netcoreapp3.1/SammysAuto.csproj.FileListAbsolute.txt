@@ -217,3 +217,4 @@ C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CarDetailsInS
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Services\Create.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DisplayPastServices.cshtml.g.cs
 C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Services\Index.cshtml.g.cs
+C:\Projects\SammysAuto\obj\Debug\netcoreapp3.1\Razor\Views\Services\Delete.cshtml.g.cs
