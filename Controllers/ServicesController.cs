@@ -29,7 +29,7 @@ namespace SammysAuto.Controllers
                 Year = car.Year,
                 UserId = car.UserId,
                 ServiceTypesObj = _db.ServiceTypes.ToList(),
-                PastServiceObj = _db.Services.Where(s => s.CarId == carId).OrderByDescending(s => s.DateAdded).Take(5)
+                PastServiceObj = _db.Services.Where(s => s.CarId == carId).OrderByDescending(s => s.DateAdded)
             };
 
             return View(model);
