@@ -17,7 +17,8 @@ namespace SammysAuto.View_Model
         
         public string VIN { get; set; }
         public int Year { get; set; }
-        
+        public string UserId { get; set; }
+
         public Service NewServiceObj { get; set; }
         public IEnumerable<Service> PastServiceObj { get; set; }
         public List<ServiceType> ServiceTypesObj { get; set; }
