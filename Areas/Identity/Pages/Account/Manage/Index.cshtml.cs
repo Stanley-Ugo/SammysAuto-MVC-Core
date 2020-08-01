@@ -13,13 +13,16 @@ namespace SammysAuto.Areas.Identity.Pages.Account.Manage
     public partial class IndexModel : PageModel
     {
         private readonly UserManager<SammysAutoUser> _userManager;
+        private readonly ApplicationDbContext _db;
         private readonly SignInManager<SammysAutoUser> _signInManager;
 
         public IndexModel(
             UserManager<SammysAutoUser> userManager,
+            ApplicationDbContext db,
             SignInManager<SammysAutoUser> signInManager)
         {
             _userManager = userManager;
+            _db = db;
             _signInManager = signInManager;
         }
 
@@ -120,16 +123,15 @@ namespace SammysAuto.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            if (Input.PhoneNumber != phoneNumber)
-            {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
-                {
-                    StatusMessage = "Unexpected error when trying to set phone number.";
-                    return RedirectToPage();
-                }
-            }
+            var userInDb = _db.Users.Where(u => u.Email.Equals(user.Email)).FirstOrDefault();
+            userInDb.FirstName = user.FirstName;
+            userInDb.LastName = user.LastName;
+            userInDb.Address = user.Address;
+            userInDb.City = user.   City;
+            userInDb.PhoneNumber = user.PhoneNumber;
+            userInDb.PostalCode = user.PostalCode;
+
+            await _db.SaveChangesAsync();
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
